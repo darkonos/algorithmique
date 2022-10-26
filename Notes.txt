@@ -1,0 +1,18 @@
+
+Le but d'un algorithme est de réfléchir sur la logique d'un programme en oubliant les règles de syntaxe d'un langage. 
+Une fois un algorithme écrit, il ne reste plus qu'à la traduire dans le langage de programmation souhaité. Cette traduction
+ ne demande aucune réflexion particulière.
+
+ algorithme nomDuProgramme
+
+// déclarations des variables
+nomVariable : typeVariable (Entier, réel, chaine..)
+
+//Initialisation des variables
+nomVariable <- 12
+
+debut
+
+// instructions
+...
+fin

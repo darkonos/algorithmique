@@ -1,0 +1,39 @@
+Écrire l'algorithme qui permet de saisir un nom d'article puis de saisir son prix HT et
+d'afficher le nom de l'article suivi du montant TTC après remise de 5% (la remise est
+accordée sur le montant TTC, tva=19,6 %). L'affichage doit être sous la forme :
+Veste : 67,55 €
+
+saisir un nom d'article 
+saisir son prix HT
+Effectuer la remise de 5% sur l'article
+Afficher le nom de l'article avec remise effectué de 5%
+
+
+algorithme montantTTC
+
+//Déclaration variable
+article : chaine
+remise : réel
+prixHT  : réel
+prixTTC : réel
+
+//Initialisaton
+TVA <- 19.6
+remise <- 5 
+
+Début
+
+ Afficher "Nom de l'article"
+ Saisir article
+ Afficher "Prix HT"
+ Saisir prixHT
+
+ //Remise de 5%
+prixHT <- prixHT - (prixHT * (remise / 100))
+
+ //Calcul en TTC
+ prixTTC <- prixHT + (prixHT * (19,6 / 100))
+
+ Afficher "Le prix de " + article + "est de : " + prixTTC
+
+Fin
