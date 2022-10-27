@@ -12,19 +12,22 @@ inférieurs ou égaux à un nombre n, où n est un nombre naturel.
 Algorithme Factorielle
 
 //Variable
-nbr, produit, i, j : Entier
+nbr, i, f : Entier
 
 //Initialisation
-j = 0
-produit = 0
+nbr <- 0
+i <- 0
+f <- 1
+
 Début
-Ecrire "Nombre : "
+
+Afficher "Nombre de départ"
 Lire nbr
-Pour i de 1 à nbr Faire
-produit = produit * ((nbr - j) * (nbr - i))
-j = j + 1
+Pour i de 2 à nbr Faire
+f <- f * i
 FinPour
-Ecrire "Factorielle de " + nbr +"vaut : " + produit
+Afficher "La factorielle de " +nbr +"vaut" +f
+
 Fin
 
 */
@@ -33,19 +36,18 @@ Fin
 
 int main()
 {
-int produit, i, j, nbr;
-produit = 0;
-j = 0;
+int i, nbr, f;
+f = 1;
 
-printf("Nombre : ");
+printf("Nombre de depart : ");
 scanf("%d", &nbr);
 
-for (i = 1; i <= nbr; i++)
+for(i = 2; i <= nbr; i++)
 {
-    produit = produit * (((nbr - j) * (nbr - i)));
-    j = j + 1;
+    f = f * i;
 }
-printf("Factorielle de %d vaut : %d \n", nbr, produit);
+
+printf("La factorielle de %d vaut : %d \n", nbr, f);
 
 return 0;
 }
