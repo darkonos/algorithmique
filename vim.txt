@@ -1,0 +1,94 @@
+LES 3 MODES
+Mode interactif:
+Permet de se déplacer dans le texte Supprimer une ligne
+Copier du texte
+rejoindre une ligne etc..
+Tapez u permet d'annuler la dernière action
+Mode insertion:
+Permet de taper du texte Pour sortir tapez Echap
+Mode commande:
+permet de lancer des commandes telles que quitter,enregistrer, etc.
+
+II. LES OPÉRATIONS BASIQUES
+Se déplacer dans la console: h, j, k, l
+ :help ou h : Aide de vim (on peux utiliser un paramètre ex : help word )
+ i : insérer du texte
+0 et $ : se déplacer en début et fin de ligne 
+w	: se déplacer de mot en mot vers la droite
+b      :  Se déplacer de mot en mot vers la gauche  
+:w : enregistrer le fichier
+:w/nomFichier : enregistrer sous
+Quitter Vim provisoirement : <Ctrl-Z> (et fg pour revenir sur Vim)
+:q : quitter 
+:wq : enregistrer puis quitter 
+III. LES OPÉRATIONS STANDARD
+x : effacer des lettres
+Placez le curseur sur une lettre et tapez x
+4x supprime les quatre prochaines lettres en partant du curseur.
+
+dd : supprimer(ou couper) une ligne
+2dd : supprime(ou coupe) deux lignes d'un coup.
+Shift+d : supprimer une ligne à partir d’un caractère jusqu’à la fin de la ligne
+dw : supprimer un mot
+4dw : supprime les 4 prochains mots
+d0 : supprime du curseur jusqu'au début de la ligne. d$ : supprime du curseur jusqu'à la fin de la ligne.
+yy : copie la ligne en mémoire. yw : copie un mot en mémoire.
+y$ : copie du curseur jusqu'à la fin de la ligne. 
+p : coller
+yy puis 3p : copie et colle 3 fois le texte après le curseur
+  r : remplacer une lettre
+  r puis s remplace la lettre r par un s
+  u : annule les modifications
+4u : annule les 4 dernières modifications Ctrl+r : annuler une annulation
+  7G : saute à la ligne N°7
+gg : pour revenir à la première ligne 
+G : pour sauter à la dernière ligne
+Echap puis v  : Pour sélectionner du texte 
+IV.OPERATIONS AVANCÉES
+/ : rechercher un mot
+/chat : le curseur se place sur l’occurrence chat dans le fichier
+Pour passer à la prochaine occurrence du mot chat tapez n pour rechercher en arrière tapez N
+:s : rechercher et remplacer du texte Les variantes à connaître :
+  :s/ancien/nouveau : remplace la première occurrence de la ligne où se trouve le curseur;
+:s/ancien/nouveau/g : remplace toutes les occurrences de la ligne où se trouve le curseur;
+:#,#s/ancien/nouveau/g : remplace toutes les occurrences dans les lignes no # à #du fichier;
+:%s/ancien/nouveau/g : remplace toutes les occurrences dans tout le fichier. C'est peut-être ce que vous utiliserez le plus fréquemment.
+  :r : fusion de fichiers
+insérer un fichier à la position du curseur: :r autreFichier 
+:g/chat/d            Efface les lignes avec le mot chat
+:g!/chat/d            Efface les lignes ne contenant pas le mot chat
+
+Ouvrir des onglets et passer l’un à l’autre
+:tabnew : pour créer un onglet 
+Ensuite on peut éditer un fichier :edit /home/file.txt 
+Maintenant pour naviguer d’un onglet à l’autre, il faut utiliser les touches «t» (onglet suivant) et «g» (onglet précédent). Pour aller dans l’autre sens de navigation, il faut utiliser la touche SHIFT en plus. 
+
+:tabe + nomDuFichier   : permet d’ouvrir un onglet 
+
+Pour fermer plusieurs onglets ouverts, on peut enregistrer ce qu’on appelle une session en faisant :mks ce qui va créer un fichier Session.vim. Par la suite, il suffira de taper :vim -S pour récupérer la session.
+
+:r!  : Permet d’insérer le résultat d’une commande directement dans le fichier 
+exemple :r! date 
+
+vim -p fichier1 fichier2  Ouvrir plusieurs fichiers en une seule fois
+:wqa  pour fermer tous les fichiers 
+
+Indenter tout un code 
+Se positionner sur la première ligne ou à celle à partir à laquelle on veut indenter et faire =G
+
+V. DÉCOUPAGE D’ÉCRAN
+Chaque morceau de l'écran (correspondant à un fichier) est appelé viewport
+:sp : découper l'écran horizontalement
+:vsp : découper l'écran verticalement
+avantage (permet de voir deux endroits différents du fichier à la fois).
+:sp autrefichier : ouvrir 2 fichiers différents liste de raccourcis lorsque l'écran est splitté:
+Ctrl + w puis Ctrl + w : navigue de viewport en viewport. Répétez l'opération plusieurs fois pour accéder au viewport désiré.
+Ctrl + w puis j : déplace le curseur pour aller au viewport juste en dessous. La même chose fonctionne avec les touches h, k et l que
+l'on utilise traditionnellement pour se déplacer dans Vim. Ctrl + w puis + : agrandit le viewport actuel.
+Ctrl + w puis - : réduit le viewport actuel.
+Ctrl + w puis = : égalise à nouveau la taille des viewports. Ctrl + w puis r : échange la position des viewports. majuscule pour échanger en sens inverse.
+Ctrl + w puis q : ferme le viewport actuel.
+
+:! : lancer une commande externe
+Permet d’effectuer quelques actions sans avoir à quitter Vim.
+:!ls : Affiche le contenu du dossier
