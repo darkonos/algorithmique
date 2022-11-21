@@ -1,0 +1,11 @@
+
+/* ******* LES TABLEAUX *******
+
+Ensemble de valeurs portant le même nom de variable et repérées par un nombre (indice).
+Les indices des tableaux par convention commencent à 0.
+On traite les tableaux à l'aide des boucles
+
+Tableau Note[11] en Entier
+
+
+
